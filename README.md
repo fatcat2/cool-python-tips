@@ -1,6 +1,6 @@
 # Python tips they don’t teach you in class
 
-Since CAM^2 is heading into some heavier development, I’d like to talk about a few things that could help smooth over the transition. Assuming most people reading this haven’t had a lot of experience writing code with other people, the purpose of this document is to get small things out of the way so PRs can focus on the larger problems.you
+Since CAM<sup>2</sup> is heading into some heavier development, I’d like to talk about a few things that could help smooth over the transition. Assuming most people reading this haven’t had a lot of experience writing code with other people, the purpose of this document is to get small things out of the way so PRs can focus on the larger problems.you
 
 
 ## 1. Naming conventions
