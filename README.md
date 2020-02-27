@@ -3,7 +3,7 @@
 Since CAM^2 is heading into some heavier development, I’d like to talk about a few things that could help smooth over the transition. Assuming most people reading this haven’t had a lot of experience writing code with other people, the purpose of this document is to get small things out of the way so PRs can focus on the larger problems.you
 
 
-##1. Naming conventions
+## 1. Naming conventions
 Python uses something called snake case. It means instead of writing something in camelCase you would write it in snake_case. Generally, lowercase everything. The only times you violate this rule is in Class names, where you would use CapCase.
 
 Another thing is to never abbreviate things in Python. Things are confusing enough with the lack of typing* and everybody working on different parts of the program. Part of what makes Python great is readable code to the human eye, so make sure you’re naming variables and functions in a descriptive way rather than something that is convenient (because in the future it will make things convenient!).
