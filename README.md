@@ -34,8 +34,10 @@ Source: PEP 484
 ## 3. Grammar
 Yeah sure, we’re software engineers, not journalists or editors at newspapers. This just means documenting code and describing our code is that much important, and grammar is a really big part of that. If we have problems communicating the purpose of our code between ourselves, it’ll be even harder to present it at a midway checkpoint or something. Here are a few grammar things to look out for that will keep our work looking professional:
 Capitalization: It’s as simple as pressing the shift button when you start the sentence! Also consider the visual difference between the following:
+```
 # creates a neural network to analyze the code
 # Creates a neural network to analyze the code.
+```
 Spelling is also important.
 
 ## 4. Docstrings
