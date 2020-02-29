@@ -6,7 +6,27 @@ Since CAM<sup>2</sup> is heading into some heavier development, I’d like to ta
 ## 1. Naming conventions
 Python uses something called snake case. It means instead of writing something in camelCase you would write it in snake_case. Generally, lowercase everything. The only times you violate this rule is in Class names, where you would use CapCase.
 
+```Python
+# How not to write a function and variable
+def ThisIsBad():
+  badVariable = "bad variable"
+  
+# How to write a variable
+def this_is_good():
+  good_variable_name = "this is good!"
+```
+
 Another thing is to never abbreviate things in Python. Things are confusing enough with the lack of typing* and everybody working on different parts of the program. Part of what makes Python great is readable code to the human eye, so make sure you’re naming variables and functions in a descriptive way rather than something that is convenient (because in the future it will make things convenient!).
+
+```Python
+# Do not name variables like this
+x = 3
+
+# What does x do? Nobody knows. Instead, name variables like this:
+pool_thread_limit = 3
+
+# Nice and descriptive! Now we know that pool_thread_limit limits the number of threads!
+```
 
 Source: PEP 8
 
