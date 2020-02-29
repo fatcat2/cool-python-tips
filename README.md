@@ -148,6 +148,28 @@ A few things changed here. We added a new subsection “Args”. This is so we c
 ### 4.4 Errors and Exceptions
 Like most programming languages, Python lets us report errors and exceptions. This is a great tool and should be used. Documenting them is very similar to arguments like we did above in section 4.3. Like arguments the goal is to give the developer information on what errors and exceptions might be raised and why they might be raised. 
 
+```Python
+def get_emotion(day: str) -> str:
+  """Gets the emotion based on the day
+
+  The parameter day is a case-sensitive variable. This means that 'monday' will not register as "Monday".
+
+  Args:
+    day (str): The day of the week you want to get the emotion for.
+
+  Raises:
+    ValueError: The day of the week passed is not defined.
+  """
+
+  if is_not_valid_day(day):
+    raise ValueError("Invalud day passed/ This could be a spelling error.")
+
+  if day == "Monday":
+    return "Sad"
+  else:
+    return "Happy"
+```
+
 
 ### 4.5 Return Values
 This is the final part of the docstring for methods. It is also one of the most important parts of the method docstring. By providing a context to your methods return value, developers who use your method will be able to use the return information properly. This will reduce the chance of them introducing any bugs into their code. 
