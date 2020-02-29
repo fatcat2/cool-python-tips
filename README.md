@@ -33,7 +33,16 @@ Source: PEP 8
 ## 2. Type hinting
 Python has supported type hinting since version 3.5. What this means is we can effectively communicate what the type of the return value is and what the type of the variable is. With type hinting, we can avoid having to deal with incompatible type errors, or for objects, class attribute and function does not exist errors. Here’s how we do that.
 
+```Python
+from random import randint
 
+def be_happy(day: str, coffee: bool=False) -> bool:
+  if day == "Monday":
+    return False
+  else:
+    luck: int = randint(0, 10)
+    return (luck > 5) and coffee
+```
 
 Let’s break down what just happened.
 I used type hinting in the arguments of the function.
@@ -44,10 +53,19 @@ In order to represent the type a variable is meant to be, we use the colon and t
 
 It can be hard to discern the true type of an object, especially if it’s from an external library. A good way to do this is to pull up the documentation for the library and take a look at the marked section below. This section will appear if the library has been properly documented (aka using Sphinx).
 
-
+![alt text](type_hinting.png "A type hinting example.")
 
 Another way to discern the type is to use the type method. Open up a Python interpreter under the same virtual environment, import the library, create the object you want and assign it to a variable, then use the type function.
 
+```Python
+from quart import Quart
+
+app = Quart("name")
+
+print(type(name))
+
+#outputs <class 'quart.app.Quart'>
+```
 
 Source: PEP 484
 
