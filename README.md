@@ -72,8 +72,10 @@ Source: PEP 484
 ## 3. Grammar
 Yeah sure, we’re software engineers, not journalists or editors at newspapers. This just means documenting code and describing our code is that much important, and grammar is a really big part of that. If we have problems communicating the purpose of our code between ourselves, it’ll be even harder to present it at a midway checkpoint or something. Here are a few grammar things to look out for that will keep our work looking professional:
 Capitalization: It’s as simple as pressing the shift button when you start the sentence! Also consider the visual difference between the following:
+```Python
 # creates a neural network to analyze the code
 # Creates a neural network to analyze the code.
+```
 Spelling is also important.
 
 ## 4. Docstrings
@@ -82,16 +84,64 @@ Docstrings are a powerful way to document your Python code. This is important so
 ### 4.1 Headers
 At the top of every docstring should be a simple one sentence description of what your function / class does. If you can’t describe in one sentence then it probably does too much.
 
+```Python
+def get_emotion(day: str) -> str:
+  """Gets the emotion based on the day.
+  """
+  
+  if day == "Monday":
+    return "Sad"
+  else:
+    return "Happy"
+```
 
 Notice the use of good grammar and punctuation here as well. Both of those are essential parts of a good docstring.  
 
 ### 4.2 Descriptions
 Not every function or class can be described in one sentence and that’s okay. If you need to tell the person using your function about an edge case, undefined behavior or other details about your implementation this is the place to do it. 
 
+```Python
+def get_emotion(day: str) -> str:
+  """Gets the emotion based on the day
+  
+  The parameter day is a case sensitive variable. This means that "Monday"
+  will not register as "Monday."
+  """
+  
+  if day == "Monday":
+    return "Sad"
+  else:
+    return "Happy"
+```
 
 ### 4.3 Parameters
 Some functions are going to use parameters and like everything else a docstring is the perfect place to document it. When describing parameters we want to keep it brief. The goal is to give the developer context to what value the parameter should be and why this function needs it. 
 
+```Python
+def get_emotion(day: str) -> str:
+  """Gets the emotion based on the day
+  
+  The parameter day is a case sensitive variable. This means that "monday" will not
+  register as "Monday."
+  
+  Args:
+    day (str): The day of the week you want to get the emotion for.
+   
+  Raises:
+    ValueError: The day of the week passed is not defined.
+    
+  Returns:
+    str: The computed emotion in CapsCase.
+  """
+  
+  if is_not_valid_day(day):
+    raise ValueError("Invalid day passed. This could be a spelling error.")
+    
+  if day == "Monday":
+    return "Sad"
+  else:
+    return "Happy"
+```
 
 A few things changed here. We added a new subsection “Args”. This is so we can easily find where the parameters are documented. Next we added the parameter itself “day” for each parameter there are 3 parts. The name of the parameter “day”, the type of the parameter “str” and the description of the parameter. Docstrings should contain all three parts.
  
@@ -109,8 +159,31 @@ Notice the similarities? Like the Errors section we only need to denote a type, 
 ## 5. Comments
 If you follow the proper naming scheme and type hinting in sections 1 and 2, then your code is probably fairly readable. So why do we need comments? The short answer is readability.  While it might be apparent to the reader what your function does, sometimes we need to explain why we did certain things like why a hardcoded value is 8 or 29. Let’s take a look at a few examples.
 
+```Python
+def connect_to_clent(hostname: str, port: int) -> None:
+  server = get_current_server()
+  
+  # Flushes the server port
+  server.flush(port)
+  
+  server.close(port)
+  server.reset(port)
+  server.bind(hostname, port)
+```
 
 This is a bad example of a comment. All our comment did was reiterate the name and parameter of our function. Our code would be readable without it. 
 
+```Python
+def connect_to_clent(hostname: str, port: int) -> None:
+  server = get_current_server()
+ 
+  # Clears port so next connection doesn't received partial or full packces
+  # not meant for it.
+  server.flush(port)
+  
+  server.close(port)
+  server.reset(port)
+  server.bind(hostname, port)
+```
 
 This comment is much better. Rather than tell us what it does, it tells us why we need it. This is important because a future developer might have assumed that close or reset handled this. Now we know both why this function exists and the consequences of removing it.  
