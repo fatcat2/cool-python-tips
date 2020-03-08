@@ -243,7 +243,7 @@ git remote add upstream git@github.com:flutter/flutter.git
 ```
 The label is the name you will be assigning to the url.
 
-### Get Latest version from Github
+### Get latest version from Github
 ```Bash
 git fetch [label]
 git fetch upstream
