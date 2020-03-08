@@ -6,6 +6,16 @@ Since CAM^2 is heading into some heavier development, I’d like to talk about a
 ## 1. Naming conventions
 Python uses something called snake case. It means instead of writing something in camelCase you would write it in snake_case. Generally, lowercase everything. The only times you violate this rule is in Class names, where you would use CapCase.
 
+```Python
+# How not to write a function and variable
+def ThisIsBad():
+  badVariable = "bad variable"
+  
+# How to write a variable
+def this_is_good():
+  good_variable_name = "this is good!"
+```
+
 Another thing is to never abbreviate things in Python. Things are confusing enough with the lack of typing* and everybody working on different parts of the program. Part of what makes Python great is readable code to the human eye, so make sure you’re naming variables and functions in a descriptive way rather than something that is convenient (because in the future it will make things convenient!).
 
 Source: PEP 8
@@ -76,3 +86,28 @@ This is a bad example of a comment. All our comment did was reiterate the name a
 
 
 This comment is much better. Rather than tell us what it does, it tells us why we need it. This is important because a future developer might have assumed that close or reset handled this. Now we know both why this function exists and the consequences of removing it.  
+
+## 6. Simple Git Commands for Open Source
+### Add another source for code (a remote)
+```Bash
+git remote add [label] [remote_url]
+git remote add upstream git@github.com:flutter/flutter.git
+# Now the main Flutter repo is a remote for our repo now!
+```
+The label is the name you will be assigning to the url.
+
+### Get Latest version from Github
+```Bash
+git fetch [label]
+git fetch upstream
+```
+Where label is the remote to get the latest version from (Note: this will not affect your current work).
+
+### Combine latest version of a label with your local work
+```Bash
+git rebase [label/branch]
+git rebase upstream/master
+```
+Where label/branch is the remote/branches commits to apply before the commits on your local branch (this should be run before and after you add commits to your repository to reduce the chance of merge conflicts.
+
+
