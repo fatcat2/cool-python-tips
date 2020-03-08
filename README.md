@@ -257,4 +257,4 @@ git rebase upstream/master
 ```
 Where label/branch is the remote/branches commits to apply before the commits on your local branch (this should be run before and after you add commits to your repository to reduce the chance of merge conflicts.
 
-
+Source: [Thoughtbot](https://thoughtbot.com/blog/keeping-a-github-fork-updated)
